@@ -10,6 +10,7 @@ void counting_sort(int*);
 void radix_sort(int*);
 void bucket_sort(int*);
 void swap(int&, int&);
+void print_array(int*, const int);
 
 int main()
 {
@@ -17,6 +18,7 @@ int main()
     const int ARRAY_SIZE = 10;
     
     bubble_sort(array, ARRAY_SIZE);
+    
     return 0;
 }
 
@@ -25,6 +27,16 @@ void swap(int& num1, int& num2)
     int temp = num1;
     num1 = num2;
     num2 = temp;
+}
+
+void print_array(int* array, const int ARRAY_SIZE)
+{
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        std::cout << array[i] << " ";
+    }
+    
+    std::cout << std::endl;
 }
 
 void bubble_sort(int* array, const int ARRAY_SIZE)
@@ -40,12 +52,14 @@ void bubble_sort(int* array, const int ARRAY_SIZE)
         }
     }
     
-    for (int i = 0; i < ARRAY_SIZE; i++)
-    {
-        std::cout << array[i] << " ";
-    }
+    print_array(array, ARRAY_SIZE);
+}
+
+void selection_sort(int* array, const int ARRAY_SIZE)
+{
     
-    std::cout << std::endl;
+    
+    
 }
 
 
