@@ -1,7 +1,7 @@
 #include <iostream>
 
 void bubble_sort(int*, const int);
-void selection_sort(int*);
+void selection_sort(int*, const int);
 void insertion_sort(int*);
 void merge_sort(int*);
 void shell_sort(int*);
@@ -17,7 +17,8 @@ int main()
     int array[] = {4, 8, 2, 3, 6, 10, 1, 5, 7, 9};
     const int ARRAY_SIZE = 10;
     
-    bubble_sort(array, ARRAY_SIZE);
+    //bubble_sort(array, ARRAY_SIZE);
+    selection_sort(array, ARRAY_SIZE);
     
     return 0;
 }
@@ -57,9 +58,25 @@ void bubble_sort(int* array, const int ARRAY_SIZE)
 
 void selection_sort(int* array, const int ARRAY_SIZE)
 {
+    int min_index;
     
+    for (int i = 0; i < ARRAY_SIZE; i++)
+    {
+        min_index = i;
+        
+        for (int j = i + 1; j < ARRAY_SIZE; j++)
+        {
+            if(array[min_index] > array[j])
+            {
+                min_index = j;
+            }
+            
+        }
+        
+        swap(array[min_index], array[i]);
+    }
     
-    
+    print_array(array, ARRAY_SIZE);
 }
 
 
